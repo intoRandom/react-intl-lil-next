@@ -27,7 +27,10 @@ const Home = () => {
           <h3 className='text-lg'>{gs('home.sum.title')}</h3>
           <div>
             {gs('home.sum.data')}
-            <Link href={'https://intorandom.com'} className='underline'>
+            <Link
+              href={'https://github.com/intoRandom/react-intl-lil-next'}
+              className='underline'
+            >
               {gs('home.sum.repository')}
             </Link>
           </div>
@@ -42,7 +45,7 @@ const Home = () => {
         <section className='flex flex-col gap-3'>
           <h3 className='text-lg'>{gs('home.config.title')}</h3>
           <div>{gs('home.config.data')}</div>
-          <Image alt='files' src={'/capture.png'} width={251} height={158} />
+          <Image alt='files' src={'./capture.png'} width={251} height={158} />
           <ul className='flex flex-col gap-3'>
             {ga('home.config.files').map((file, index) => (
               <li key={index} className='flex flex-col gap-2'>
