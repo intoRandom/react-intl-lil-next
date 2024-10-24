@@ -36,27 +36,27 @@ const Home = () => {
           </div>
         </section>
 
-        <section className='flex flex-col gap-3'>
+        <section className='flex flex-col gap-2'>
           <h3 className='text-lg'>{gs('home.inst.title')}</h3>
           <div>{gs('home.inst.data')}</div>
           <pre className='border-2 p-3'>npm install react-intl-lil</pre>
         </section>
 
-        <section className='flex flex-col gap-3'>
+        <section className='flex flex-col gap-2'>
           <h3 className='text-lg'>{gs('home.config.title')}</h3>
           <div>{gs('home.config.data')}</div>
           <Image alt='files' src={'./capture.png'} width={251} height={158} />
-          <ul className='flex flex-col gap-3'>
+          <ul className='flex flex-col gap-2'>
             {ga('home.config.files').map((file, index) => (
               <li key={index} className='flex flex-col gap-2'>
                 <div>{file.data}</div>
-                <pre className='border-2 p-3'>{file.file}</pre>
+                <pre className='border-2 p-3 overflow-auto'>{file.file}</pre>
               </li>
             ))}
           </ul>
         </section>
 
-        <section className='flex flex-col gap-3 py-10'>
+        <section className='flex flex-col gap-2 py-10'>
           <div>{gs('home.final')}</div>
           <Link
             href={'https://buymeacoffee.com/intorandom'}
