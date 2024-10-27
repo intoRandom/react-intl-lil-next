@@ -27,7 +27,7 @@ const data = {
         },
         {
           data: 'Contenedor, este deberá ubicarse en la raíz del proyecto y deberá incluir una referencia hacia el archivo de configuración',
-          file: '@/app/layout.tsx \n\n... \nimport { LangProvider } from "react-intl-lil"; \nimport { langConfig } from "@/lang/config"; \n\nexport default function RootLayout({ \n  children, \n}: Readonly<{ \n  children: React.ReactNode; \n}>) { \n   return ( \n    <html lang={langConfig.defaultLang}> \n      <body > \n        <LangProvider getLanguageConfig={langConfig}> \n          {children} \n        </LangProvider> \n      </body> \n    </html> \n  ); \n}',
+          file: '@/app/layout.tsx \n\n... \nimport { LangProvider } from "react-intl-lil"; \nimport { langConfig } from "@/lang/config"; \n\nexport default function RootLayout({ \n  children, \n}: Readonly<{ \n  children: React.ReactNode; \n}>) { \n   return ( \n    <html lang={langConfig.defaultLang}> \n      <body > \n        <LangProvider langConfig={langConfig}> \n          {children} \n        </LangProvider> \n      </body> \n    </html> \n  ); \n}',
         },
         {
           data: 'Eso es todo lo que se necesita para que su proyecto estático admita varios idiomas. Para obtener strings o arrays para cada idioma, simplemente use el hook useLanguage dentro de un componente.',

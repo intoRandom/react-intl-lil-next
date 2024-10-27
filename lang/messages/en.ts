@@ -26,7 +26,7 @@ const data = {
         },
         {
           data: 'Container, this should be located at the root of the project and must include a reference to the configuration file',
-          file: '@/app/layout.tsx \n\n... \nimport { LangProvider } from "react-intl-lil"; \nimport { langConfig } from "@/lang/config"; \n\nexport default function RootLayout({ \n  children, \n}: Readonly<{ \n  children: React.ReactNode; \n}>) { \n   return ( \n    <html lang={langConfig.defaultLang}> \n      <body > \n        <LangProvider getLanguageConfig={langConfig}> \n          {children} \n        </LangProvider> \n      </body> \n    </html> \n  ); \n}',
+          file: '@/app/layout.tsx \n\n... \nimport { LangProvider } from "react-intl-lil"; \nimport { langConfig } from "@/lang/config"; \n\nexport default function RootLayout({ \n  children, \n}: Readonly<{ \n  children: React.ReactNode; \n}>) { \n   return ( \n    <html lang={langConfig.defaultLang}> \n      <body > \n        <LangProvider langConfig={langConfig}> \n          {children} \n        </LangProvider> \n      </body> \n    </html> \n  ); \n}',
         },
         {
           data: 'That is all it takes to give your static project support for multiple languages. For get the strings or arrays for each language just use the hook useLanguage inside a component',
