@@ -1,10 +1,14 @@
 'use client';
 
-import Link from 'next/link';
 import React from 'react';
 
-import { useLanguage } from 'react-intl-lil';
+import Link from 'next/link';
 import Image from 'next/image';
+
+import { useLanguage } from 'react-intl-lil';
+
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco, a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Home = () => {
   const { gs, ga } = useLanguage();
@@ -39,7 +43,9 @@ const Home = () => {
         <section className='flex flex-col gap-2'>
           <h3 className='text-lg'>{gs('home.inst.title')}</h3>
           <div>{gs('home.inst.data')}</div>
-          <pre className='border-2 p-3'>npm install react-intl-lil</pre>
+          <SyntaxHighlighter language='javascript' style={a11yDark}>
+            npm install react-intl-lil
+          </SyntaxHighlighter>
         </section>
 
         <section className='flex flex-col gap-2'>
@@ -50,13 +56,15 @@ const Home = () => {
             {ga('home.config.files').map((file, index) => (
               <li key={index} className='flex flex-col gap-2'>
                 <div>{file.data}</div>
-                <pre className='border-2 p-3 overflow-auto'>{file.file}</pre>
+                <SyntaxHighlighter language='javascript' style={a11yDark}>
+                  {file.file}
+                </SyntaxHighlighter>
               </li>
             ))}
           </ul>
         </section>
 
-        <section className='flex flex-col gap-2 py-10'>
+        <section className='flex flex-col gap-2 py-5'>
           <div>{gs('home.final')}</div>
           <Link
             href={'https://buymeacoffee.com/intorandom'}
