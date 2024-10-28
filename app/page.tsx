@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { useLanguage } from 'react-intl-lil';
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { docco, a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 const Home = () => {
   const { gs, ga } = useLanguage();
